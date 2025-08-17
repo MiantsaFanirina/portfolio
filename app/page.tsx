@@ -1,7 +1,14 @@
-'use client'
-export default function Home() {
+import Navigation from '@/components/Navigation';
+import Hero from '@/components/Hero';
 
+
+export default function Home() {
     return (
-       <>Salut les gens</>
+        <main className="bg-gray-950">
+            <Navigation />
+            <div id="home">
+                <Hero />
+            </div>
+        </main>
     );
 }
