@@ -1,5 +1,7 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
 
 
 export default function Home() {
@@ -8,6 +10,12 @@ export default function Home() {
             <Navigation />
             <div id="home">
                 <Hero />
+            </div>
+            <div id="projects">
+                <Projects />
+            </div>
+            <div id="skills">
+                <Skills />
             </div>
         </main>
     );

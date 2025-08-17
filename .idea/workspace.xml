@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d578789-13e0-44b8-beee-b33f88a965f8" name="Changes" comment="setting up tailwind variables">
-      <change afterPath="$PROJECT_DIR$/components/Hero.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Navigation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/portfolio.ts" afterDir="false" />
+    <list default="true" id="7d578789-13e0-44b8-beee-b33f88a965f8" name="Changes" comment="adding portfolio data, Navigation &amp; Hero section">
+      <change afterPath="$PROJECT_DIR$/components/Projects.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Skills.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_document.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bun.lockb" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lockb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/portfolio.ts" beforeDir="false" afterPath="$PROJECT_DIR$/data/portfolio.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +151,7 @@
       <workItem from="1737672366746" duration="1228000" />
       <workItem from="1738451066003" duration="22000" />
       <workItem from="1755423355091" duration="521000" />
-      <workItem from="1755424190656" duration="1912000" />
+      <workItem from="1755424190656" duration="9385000" />
     </task>
     <task id="LOCAL-00001" summary="setting up tailwind variables">
       <option name="closed" value="true" />
@@ -164,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755424419574</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="adding portfolio data, Navigation &amp; Hero section">
+      <option name="closed" value="true" />
+      <created>1755426194369</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1755426194369</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +189,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="setting up tailwind variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="setting up tailwind variables" />
+    <MESSAGE value="adding portfolio data, Navigation &amp; Hero section" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding portfolio data, Navigation &amp; Hero section" />
   </component>
 </project>

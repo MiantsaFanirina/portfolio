@@ -30,107 +30,103 @@ export interface Skill {
 export const profile: Profile = {
     name: "Miantsa Fanirina",
     title: "Full Stack Developer & Code Architect",
-    bio: "Passionate full-stack developer with 5+ years of experience crafting digital experiences. I turn coffee into code and bugs into features. Always learning, always building.",
+    bio: "Passionate full-stack developer with 4+ years of experience crafting digital experiences. I turn coffee into code and bugs into features. Always learning, always building.",
     location: "Dubai, UAE",
     email: "MiantsaFanirinaRakotondrafara@gmail.com",
     github: "MiantsaFanirina",
-    linkedin: "Miantsa Fanirina",
+    linkedin: "miantsa-fanirina-b65a102b5",
     avatar: "/me.png"
 };
 
 export const skills: Skill[] = [
-    { name: "TypeScript", level: 95, category: "frontend" },
+    { name: "TypeScript/JavaScript", level: 99, category: "frontend" },
     { name: "React/Next.js", level: 98, category: "frontend" },
-    { name: "Node.js", level: 92, category: "backend" },
-    { name: "PostgreSQL", level: 88, category: "backend" },
     { name: "React Native", level: 85, category: "mobile" },
-    { name: "Docker", level: 82, category: "tools" },
-    { name: "AWS", level: 78, category: "tools" },
+    { name: "Node.js/Nest.js", level: 92, category: "backend" },
+    { name: "Django Rest Framework", level: 90, category: "backend" },
     { name: "GraphQL", level: 90, category: "backend" },
+    { name: "PostgreSQL", level: 88, category: "backend" },
+    { name: "Docker", level: 90, category: "tools" },
+    { name: "GCP", level: 90, category: "tools" },
+    { name: "AWS", level: 90, category: "tools" },
+    { name: "Unity3D/Unreal Engine", level: 89, category: "tools" },
+    { name: "Adobe", level: 89, category: "tools" },
 ];
 
 export const projects: Project[] = [
     {
         id: "1",
-        title: "TaskFlow Pro",
+        title: "Instagreen",
         type: "mobile",
         description: [
-            "A revolutionary productivity app that combines AI-powered task management with beautiful UX design.",
-            "Features real-time collaboration, smart notifications, and cross-platform synchronization.",
-            "Built with React Native and Node.js backend, serving 10K+ active users."
+            "Instagram-inspired mobile app built with React Native and Expo.",
+            "Features include user authentication with Clerk, real-time backend with Convex, post creation with image uploads, and interactive likes and comments.",
+            "Includes a scrollable feed and user profile pages with post history."
         ],
-        technologies: ["React Native", "TypeScript", "Node.js", "PostgreSQL", "Redis"],
-        image: "https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg",
-        demoUrl: "https://taskflow-demo.com",
-        githubUrl: "https://github.com/demo/taskflow",
+        technologies: ["React Native", "Expo", "Convex", "Clerk"],
+        image: "/projects/instagreen.png",
+        githubUrl: "https://github.com/MiantsaFanirina/Instagreen",
         featured: true
     },
     {
         id: "2",
-        title: "CodeShare Platform",
+        title: "Horizon",
         type: "web",
         description: [
-            "Real-time collaborative code editor with syntax highlighting and live preview.",
-            "Supports 20+ programming languages with intelligent auto-completion.",
-            "Features include room-based collaboration, version history, and export options."
+            "Modern banking service application with secure financial data integration.",
+            "Features include user authentication, bank account linking via Plaid, real-time balances and transactions, and a financial insights dashboard.",
+            "Designed with a clean and responsive UI for a seamless digital banking experience."
         ],
-        technologies: ["Next.js", "Socket.io", "Monaco Editor", "Supabase"],
-        image: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
-        demoUrl: "https://codeshare-demo.com",
-        githubUrl: "https://github.com/demo/codeshare",
-        featured: true
+        technologies: ["Next.js", "Prisma", "Plaid", "Tailwind CSS", "PostgreSQL", "TypeScript"],
+        image: "/projects/horizon.png",
+        githubUrl: "https://github.com/demo/horizon",
+        featured: false
     },
     {
         id: "3",
-        title: "EcoTrack",
-        type: "hackathon",
-        description: [
-            "Winner of GreenTech Hackathon 2023 - Carbon footprint tracking app.",
-            "Uses ML algorithms to analyze user habits and suggest eco-friendly alternatives.",
-            "Built in 48 hours with a team of 4 developers."
-        ],
-        technologies: ["React", "Python", "TensorFlow", "Firebase"],
-        image: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg",
-        demoUrl: "https://ecotrack-demo.com",
-        featured: false
-    },
-    {
-        id: "4",
-        title: "CryptoVault",
+        title: "Mamisoa Hyacinthe – Portfolio",
         type: "web",
         description: [
-            "Secure cryptocurrency portfolio tracker with real-time price updates.",
-            "Features advanced charting, profit/loss calculations, and portfolio analytics."
+            "Professional portfolio website showcasing profile, experience, and skills.",
+            "Features smooth animations, responsive design, and sections for about, experience, projects, and contact.",
+            "Built with performance and accessibility in mind, deployed on Vercel."
         ],
-        technologies: ["Vue.js", "Express.js", "MongoDB", "Chart.js"],
-        image: "https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg",
-        githubUrl: "https://github.com/demo/cryptovault",
-        featured: false
-    },
-    {
-        id: "5",
-        title: "FitnessBuddy",
-        type: "mobile",
-        description: [
-            "AI-powered fitness companion with personalized workout plans.",
-            "Integrates with wearables for comprehensive health tracking."
-        ],
-        technologies: ["Flutter", "Firebase", "TensorFlow Lite"],
-        image: "https://images.pexels.com/photos/416778/pexels-photo-416778.jpeg",
-        demoUrl: "https://fitnessbuddy-demo.com",
-        featured: false
-    },
-    {
-        id: "6",
-        title: "DevConnect",
-        type: "hackathon",
-        description: [
-            "Social platform for developers to share projects and collaborate.",
-            "Built for TechConnect Hackathon - 2nd place winner."
-        ],
-        technologies: ["Svelte", "Supabase", "Tailwind CSS"],
-        image: "https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg",
-        githubUrl: "https://github.com/demo/devconnect",
+        technologies: ["Next.js", "React", "Framer Motion", "Tailwind CSS", "Vercel"],
+        image: "/projects/portfolioMamisoa.png", // placeholder portfolio screenshot
+        demoUrl: "https://portfolio-mamisoa.vercel.app",
+        githubUrl: "https://github.com/MiantsaFanirina/PortfolioMamisoa",
         featured: false
     }
+    ,
+    {
+        id: "4",
+        title: "Aloc-Cars",
+        type: "web",
+        description: [
+            "Car rental web application developed for the Swiss-based company aloccars.ch.",
+            "Includes vehicle browsing with filters, booking system with date selection, and an admin panel for managing cars and reservations.",
+            "Built with a robust Symfony backend and responsive Next.js frontend, featuring secure authentication and multilingual support (planned)."
+        ],
+        technologies: ["Symfony", "Next.js", "TypeScript", "Tailwind CSS", "MySQL", "Axios"],
+        image: "/projects/aloc-cars.png", // placeholder car rental image
+        demoUrl: "https://aloccars.ch",
+        githubUrl: "https://github.com/MiantsaFanirina/Aloc-Cars-Client",
+        featured: false
+    }
+    ,
+    {
+        id: "5",
+        title: "Forex Timeframe Alignment",
+        type: "web",
+        description: [
+            "Professional web application designed to help forex traders analyze and identify multi-timeframe alignment for better trading decisions.",
+            "Includes real-time visualization of forex timeframe alignment, smooth and intuitive user experience, and responsive design for desktop and mobile."
+        ],
+        technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+        image: "/projects/fx-alignment.png", // placeholder trading dashboard image
+        demoUrl: "https://professional-forex-timeframe-alignm.vercel.app",
+        githubUrl: "https://github.com/MiantsaFanirina/professional-forex-timeframe-alignment-analysis",
+        featured: false
+    }
+
 ];
