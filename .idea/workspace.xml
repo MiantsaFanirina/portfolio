@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7d578789-13e0-44b8-beee-b33f88a965f8" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/portfolio.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/_document.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bun.lockb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/postcss.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/utils.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2ptLeHCe3SSRScPCf17s77wky7D" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "last_opened_file_path": "C:/Users/miant/OneDrive/Documents/DEV/portfolio",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "C:\\Users\\miant\\OneDrive\\Documents\\DEV\\portfolio\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\miant\OneDrive\Documents\DEV\muscilab\client\app\(core)\(explore)\music" />
+      <recent name="C:\Users\miant\OneDrive\Documents\DEV\muscilab\client\app\(core)\(explore)" />
+      <recent name="C:\Users\miant\OneDrive\Documents\DEV\muscilab\client\app" />
+      <recent name="C:\Users\miant\OneDrive\Documents\DEV\muscilab\client\app\(core)" />
+      <recent name="C:\Users\miant\OneDrive\Documents\DEV\muscilab\client\features\login" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\miant\OneDrive\Documents\DEV\muscilab\client" />
+      <recent name="C:\Users\miant\OneDrive\Documents\DEV\muscilab\client\app" />
+      <recent name="C:\Users\miant\OneDrive\Documents\DEV\muscilab\client\app\(core)" />
+      <recent name="C:\Users\miant\OneDrive\Documents\DEV\muscilab\client\features\core\components" />
+      <recent name="C:\Users\miant\OneDrive\Documents\DEV\muscilab\client\app\(core)\(explore)" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Next.js: server-side">
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: server-side" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-WS-251.27812.50" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d578789-13e0-44b8-beee-b33f88a965f8" name="Changes" comment="" />
+      <created>1733580518876</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733580518876</updated>
+      <workItem from="1733580519915" duration="5124000" />
+      <workItem from="1733649593449" duration="4547000" />
+      <workItem from="1733719365980" duration="40633000" />
+      <workItem from="1733808240563" duration="14216000" />
+      <workItem from="1733928477758" duration="2215000" />
+      <workItem from="1733936392681" duration="7811000" />
+      <workItem from="1733984534278" duration="47000" />
+      <workItem from="1733986193023" duration="8985000" />
+      <workItem from="1734173485199" duration="869000" />
+      <workItem from="1734259678383" duration="6752000" />
+      <workItem from="1734527601880" duration="3200000" />
+      <workItem from="1734542244126" duration="3194000" />
+      <workItem from="1734674820877" duration="2212000" />
+      <workItem from="1734678557172" duration="6592000" />
+      <workItem from="1734702857814" duration="4114000" />
+      <workItem from="1734708497972" duration="10437000" />
+      <workItem from="1734936888394" duration="774000" />
+      <workItem from="1734938232598" duration="9949000" />
+      <workItem from="1734970453911" duration="2643000" />
+      <workItem from="1735295167029" duration="470000" />
+      <workItem from="1735396464762" duration="2221000" />
+      <workItem from="1735739312791" duration="1640000" />
+      <workItem from="1735745658844" duration="1802000" />
+      <workItem from="1735909571947" duration="18347000" />
+      <workItem from="1735929713113" duration="1323000" />
+      <workItem from="1735995257665" duration="1994000" />
+      <workItem from="1736057158779" duration="14551000" />
+      <workItem from="1736154670408" duration="5520000" />
+      <workItem from="1736225114206" duration="328000" />
+      <workItem from="1737113562946" duration="7706000" />
+      <workItem from="1737672366746" duration="1228000" />
+      <workItem from="1738451066003" duration="22000" />
+      <workItem from="1755423355091" duration="521000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+  </component>
+</project>
