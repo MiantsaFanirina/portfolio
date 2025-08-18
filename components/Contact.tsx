@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useState } from 'react';
+import {ChangeEvent, FormEvent, useRef, useState} from 'react';
 import { Send, Mail, MessageSquare, User } from 'lucide-react';
 
 export default function Contact() {
@@ -19,13 +19,13 @@ export default function Contact() {
 
     const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         // Handle form submission here
         console.log('Form submitted:', formData);
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
@@ -63,12 +63,12 @@ export default function Contact() {
                         </motion.div>
 
                         <h2 className="text-4xl md:text-6xl font-bold text-white font-mono mb-6">
-                            Let's <span className="text-transparent bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text">Connect</span>
+                            Let&apos;s <span className="text-transparent bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text">Connect</span>
                         </h2>
 
                         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                             Have a project in mind or just want to chat about technology?
-                            I'd love to hear from you. Drop me a message and let's build something amazing together.
+                            I&apos;d love to hear from you. Drop me a message and let&apos;s build something amazing together.
                         </p>
                     </motion.div>
 
@@ -179,7 +179,7 @@ export default function Contact() {
                         <motion.a
                             href="mailto:MiantsaFanirinaRakotondrafara@gmail.com"
                             whileHover={{ scale: 1.05 }}
-                            className="inline-flex items-center space-x-2 text-green-400 hover:text-green-300 transition-colors text-lg"
+                            className="inline-flex items-center space-x-2 text-green-400 hover:text-green-300 transition-colors text-sm md:text-lg"
                         >
                             <Mail className="w-5 h-5" />
                             <span>MiantsaFanirinaRakotondrafara@gmail.com</span>

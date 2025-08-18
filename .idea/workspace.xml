@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d578789-13e0-44b8-beee-b33f88a965f8" name="Changes" comment="adding portfolio data, Skills section &amp; Projects section">
-      <change afterPath="$PROJECT_DIR$/components/Contact.tsx" afterDir="false" />
+    <list default="true" id="7d578789-13e0-44b8-beee-b33f88a965f8" name="Changes" comment="delete unused public files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bun.lockb" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lockb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Hero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Projects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Projects.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Skills.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Skills.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/portfolio.ts" beforeDir="false" afterPath="$PROJECT_DIR$/data/portfolio.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Contact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Contact.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +37,9 @@
     "accountId": "1a67a421-e133-4e7c-98a2-e1f2b37fde38"
   }
 }]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -71,7 +67,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "settings.qodana",
     "ts.external.directory.path": "C:\\Users\\miant\\OneDrive\\Documents\\DEV\\portfolio\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -155,7 +151,7 @@
       <workItem from="1737672366746" duration="1228000" />
       <workItem from="1738451066003" duration="22000" />
       <workItem from="1755423355091" duration="521000" />
-      <workItem from="1755424190656" duration="23765000" />
+      <workItem from="1755424190656" duration="24848000" />
     </task>
     <task id="LOCAL-00001" summary="setting up tailwind variables">
       <option name="closed" value="true" />
@@ -181,7 +177,23 @@
       <option name="project" value="LOCAL" />
       <updated>1755459911812</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="V1">
+      <option name="closed" value="true" />
+      <created>1755482142948</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1755482142948</updated>
+    </task>
+    <task id="LOCAL-00005" summary="delete unused public files">
+      <option name="closed" value="true" />
+      <created>1755482208860</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1755482208860</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +215,8 @@
     <MESSAGE value="setting up tailwind variables" />
     <MESSAGE value="adding portfolio data, Navigation &amp; Hero section" />
     <MESSAGE value="adding portfolio data, Skills section &amp; Projects section" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding portfolio data, Skills section &amp; Projects section" />
+    <MESSAGE value="V1" />
+    <MESSAGE value="delete unused public files" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete unused public files" />
   </component>
 </project>
