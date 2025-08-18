@@ -1,3 +1,9 @@
+// data/portfolio.ts
+import { IconType } from "react-icons";
+import { SiTypescript, SiJavascript, SiReact, SiNodedotjs, SiNestjs, SiDjango, SiGraphql, SiPostgresql, SiDocker, SiGooglecloud, SiUnity, SiAdobe, SiExpo, SiUnrealengine } from "react-icons/si";
+import {FaAws} from "react-icons/fa";
+import { RiNextjsFill } from "react-icons/ri";
+
 export interface Project {
     id: string;
     title: string;
@@ -19,12 +25,13 @@ export interface Profile {
     github: string;
     linkedin: string;
     avatar: string;
-}
+} // 👈 type for icons
 
 export interface Skill {
     name: string;
     level: number;
     category: 'frontend' | 'backend' | 'mobile' | 'tools';
+    logo?: IconType;
 }
 
 export const profile: Profile = {
@@ -38,20 +45,26 @@ export const profile: Profile = {
     avatar: "/me.png"
 };
 
+
 export const skills: Skill[] = [
-    { name: "TypeScript/JavaScript", level: 99, category: "frontend" },
-    { name: "React/Next.js", level: 98, category: "frontend" },
-    { name: "React Native", level: 85, category: "mobile" },
-    { name: "Node.js/Nest.js", level: 92, category: "backend" },
-    { name: "Django Rest Framework", level: 90, category: "backend" },
-    { name: "GraphQL", level: 90, category: "backend" },
-    { name: "PostgreSQL", level: 88, category: "backend" },
-    { name: "Docker", level: 90, category: "tools" },
-    { name: "GCP", level: 90, category: "tools" },
-    { name: "AWS", level: 90, category: "tools" },
-    { name: "Unity3D/Unreal Engine", level: 89, category: "tools" },
-    { name: "Adobe", level: 89, category: "tools" },
+    { name: "TypeScript", level: 99, category: "frontend", logo: SiTypescript },
+    { name: "JavaScript", level: 99, category: "frontend", logo: SiJavascript  },
+    { name: "React", level: 98, category: "frontend", logo: SiReact },
+    { name: "Next.js", level: 98, category: "frontend", logo: RiNextjsFill  },
+    { name: "React Native", level: 85, category: "mobile", logo: SiExpo },
+    { name: "Node.js", level: 92, category: "backend", logo: SiNodedotjs },
+    { name: "Nest.js", level: 92, category: "backend", logo: SiNestjs },
+    { name: "Django", level: 90, category: "backend", logo: SiDjango },
+    { name: "GraphQL", level: 90, category: "backend", logo: SiGraphql },
+    { name: "PostgreSQL", level: 88, category: "backend", logo: SiPostgresql },
+    { name: "Docker", level: 90, category: "tools", logo: SiDocker },
+    { name: "GCP", level: 90, category: "tools", logo: SiGooglecloud },
+    { name: "AWS", level: 90, category: "tools", logo: FaAws  },
+    { name: "Unity3D", level: 89, category: "tools", logo: SiUnity },
+    { name: "Unreal Engine", level: 89, category: "tools", logo: SiUnrealengine  },
+    { name: "Adobe", level: 89, category: "tools", logo: SiAdobe },
 ];
+
 
 export const projects: Project[] = [
     {
@@ -68,22 +81,22 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/MiantsaFanirina/Instagreen",
         featured: true
     },
+    // {
+    //     id: "2",
+    //     title: "Horizon",
+    //     type: "web",
+    //     description: [
+    //         "Modern banking service application with secure financial data integration.",
+    //         "Features include user authentication, bank account linking via Plaid, real-time balances and transactions, and a financial insights dashboard.",
+    //         "Designed with a clean and responsive UI for a seamless digital banking experience."
+    //     ],
+    //     technologies: ["Next.js", "Prisma", "Plaid", "Tailwind CSS", "PostgreSQL", "TypeScript"],
+    //     image: "/projects/horizon.png",
+    //     githubUrl: "https://github.com/demo/horizon",
+    //     featured: false
+    // },
     {
         id: "2",
-        title: "Horizon",
-        type: "web",
-        description: [
-            "Modern banking service application with secure financial data integration.",
-            "Features include user authentication, bank account linking via Plaid, real-time balances and transactions, and a financial insights dashboard.",
-            "Designed with a clean and responsive UI for a seamless digital banking experience."
-        ],
-        technologies: ["Next.js", "Prisma", "Plaid", "Tailwind CSS", "PostgreSQL", "TypeScript"],
-        image: "/projects/horizon.png",
-        githubUrl: "https://github.com/demo/horizon",
-        featured: false
-    },
-    {
-        id: "3",
         title: "Mamisoa Hyacinthe – Portfolio",
         type: "web",
         description: [
@@ -99,7 +112,7 @@ export const projects: Project[] = [
     }
     ,
     {
-        id: "4",
+        id: "3",
         title: "Aloc-Cars",
         type: "web",
         description: [
@@ -115,7 +128,7 @@ export const projects: Project[] = [
     }
     ,
     {
-        id: "5",
+        id: "4",
         title: "Forex Timeframe Alignment",
         type: "web",
         description: [
@@ -126,7 +139,7 @@ export const projects: Project[] = [
         image: "/projects/fx-alignment.png", // placeholder trading dashboard image
         demoUrl: "https://professional-forex-timeframe-alignm.vercel.app",
         githubUrl: "https://github.com/MiantsaFanirina/professional-forex-timeframe-alignment-analysis",
-        featured: false
+        featured: true
     }
 
 ];

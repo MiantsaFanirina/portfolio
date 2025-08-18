@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from 'motion/react';
-import { useMemo, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { ExternalLink, Github, Smartphone, Globe, Trophy } from 'lucide-react';
 import { projects, Project } from '@/data/portfolio';
 
@@ -10,12 +10,11 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
     const cardRef = useRef(null);
 
     // Get scroll progress for parallax effect
-    const { scrollYProgress } = useScroll({ target: cardRef, offset: ["start end", "end start"] });
+    const { scrollYProgress } = useScroll({
+        target: cardRef,
+        offset: ["start end", "end start"]
+    });
 
-    // Random delay for scale only (0 to 1s)
-    const scaleDelay = useMemo(() => Math.random(), []); // 0 to 1 second
-
-    // Apply transforms
     const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
     const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
 
@@ -44,18 +43,12 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
     return (
         <motion.div
             ref={cardRef}
-            style={{
-                y,
-                scale,
-            }}
+            style={{ y: project.featured ? y : undefined, scale: project.featured ? scale : undefined }}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-                y: { duration: 0.6, delay: index * 0.1 },
-                scale: { duration: 0.6, delay: scaleDelay }
-            }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className={`relative group ${project.featured ? 'lg:col-span-2' : ''} flex flex-col h-full`}
+            className={`relative group ${project.featured ? 'lg:col-span-2' : ''}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >

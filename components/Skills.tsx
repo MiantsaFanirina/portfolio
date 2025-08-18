@@ -1,22 +1,24 @@
 "use client";
 
-import { motion, useScroll, useTransform } from 'motion/react';
-import { useRef } from 'react';
-import { skills, Skill } from '@/data/portfolio';
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
+import { skills, Skill } from "@/data/portfolio";
 
 const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
-    const getCategoryColor = (category: Skill['category']) => {
+    const getCategoryColor = (category: Skill["category"]) => {
         switch (category) {
-            case 'frontend':
-                return 'from-blue-400 to-cyan-400';
-            case 'backend':
-                return 'from-green-400 to-emerald-400';
-            case 'mobile':
-                return 'from-purple-400 to-pink-400';
-            case 'tools':
-                return 'from-yellow-400 to-orange-400';
+            case "frontend":
+                return "from-blue-400 to-cyan-400";
+            case "backend":
+                return "from-green-400 to-emerald-400";
+            case "mobile":
+                return "from-purple-400 to-pink-400";
+            case "tools":
+                return "from-yellow-400 to-orange-400";
         }
     };
+
+    const Logo = skill.logo;
 
     return (
         <motion.div
@@ -25,11 +27,14 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
-            className="group"
+            className="snap-center flex-shrink-0 w-[75%] md:w-full px-4 md:px-0"
         >
             <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-gray-700 transition-all">
                 <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-white font-semibold text-lg">{skill.name}</h3>
+                    <div className="flex items-center gap-2">
+                        {Logo && <Logo className="text-xl text-blue-400" />}
+                        <h3 className="text-white font-semibold text-lg">{skill.name}</h3>
+                    </div>
                     <span className="text-gray-400 text-sm font-mono">{skill.level}%</span>
                 </div>
 
@@ -50,7 +55,11 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
                 </div>
 
                 <div className="mt-3">
-          <span className={`text-xs px-2 py-1 rounded-full bg-gradient-to-r ${getCategoryColor(skill.category)} text-gray-900 font-medium capitalize`}>
+          <span
+              className={`text-xs px-2 py-1 rounded-full bg-gradient-to-r ${getCategoryColor(
+                  skill.category
+              )} text-gray-900 font-medium capitalize`}
+          >
             {skill.category}
           </span>
                 </div>
@@ -60,10 +69,10 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
 };
 
 export default function Skills() {
-    const ref = useRef(null);
+    const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["start end", "end start"]
+        offset: ["start end", "end start"],
     });
 
     const rotateX = useTransform(scrollYProgress, [0, 1], [0, 360]);
@@ -99,7 +108,10 @@ export default function Skills() {
                     </motion.div>
 
                     <h2 className="text-4xl md:text-6xl font-bold text-white font-mono mb-6">
-                        Tech <span className="text-transparent bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text">Stack</span>
+                        Tech{" "}
+                        <span className="text-transparent bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text">
+              Stack
+            </span>
                     </h2>
 
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -107,12 +119,58 @@ export default function Skills() {
                     </p>
                 </motion.div>
 
-                {/* Skills Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {/* Skills Layout */}
+                <div className="md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 hidden md:grid">
                     {skills.map((skill, index) => (
                         <SkillCard key={skill.name} skill={skill} index={index} />
                     ))}
                 </div>
+
+                {/* Mobile Scroll Snap */}
+                <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory gap-4 py-4 -mx-4 px-4 scrollbar-hide">
+                    {skills.map((skill, index) => (
+                        <SkillCard key={skill.name} skill={skill} index={index} />
+                    ))}
+                </div>
+
+                {/* Advanced Swipe Right Hand Indicator */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.5 }}
+                    className="relative left-1/2 transform -translate-x-1/2 md:hidden flex items-center justify-center"
+                >
+                    {/* Hand SVG */}
+                    <motion.svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-8 h-8 text-green-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        animate={{ x: [0, 24, 0], scale: [1, 1.2, 1] }}
+                        transition={{
+                            duration: 1.5,
+                            repeat: Infinity,
+                            repeatType: "loop",
+                            ease: "easeInOut",
+                        }}
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M14 10l4 4m0 0l-4 4m4-4H3"
+                        />
+                    </motion.svg>
+
+                    {/* Optional subtle trail effect */}
+                    <motion.div
+                        className="absolute w-8 h-1 bg-green-400/50 rounded-full"
+                        animate={{ x: [0, 24, 0], opacity: [0.6, 0.2, 0.6] }}
+                        transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
+                    />
+                </motion.div>
+
 
                 {/* Categories Legend */}
                 <motion.div
@@ -123,10 +181,10 @@ export default function Skills() {
                     className="flex flex-wrap justify-center gap-4 mt-12"
                 >
                     {[
-                        { category: 'frontend', color: 'from-blue-400 to-cyan-400', label: 'Frontend' },
-                        { category: 'backend', color: 'from-green-400 to-emerald-400', label: 'Backend' },
-                        { category: 'mobile', color: 'from-purple-400 to-pink-400', label: 'Mobile' },
-                        { category: 'tools', color: 'from-yellow-400 to-orange-400', label: 'Tools' }
+                        { category: "frontend", color: "from-blue-400 to-cyan-400", label: "Frontend" },
+                        { category: "backend", color: "from-green-400 to-emerald-400", label: "Backend" },
+                        { category: "mobile", color: "from-purple-400 to-pink-400", label: "Mobile" },
+                        { category: "tools", color: "from-yellow-400 to-orange-400", label: "Tools" },
                     ].map((item, index) => (
                         <motion.div
                             key={item.category}
@@ -141,6 +199,17 @@ export default function Skills() {
                     ))}
                 </motion.div>
             </div>
+
+            {/* Scrollbar Hide Styles */}
+            <style jsx>{`
+                .scrollbar-hide::-webkit-scrollbar {
+                    display: none;
+                }
+                .scrollbar-hide {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+            `}</style>
         </section>
     );
 }

@@ -1,17 +1,9 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { profile } from "@/data/portfolio";
-
-type Particle = {
-    left: string;
-    top: string;
-    xOffset: number;
-    duration: number;
-    delay: number;
-};
 
 export default function Hero() {
     const ref = useRef(null);
@@ -32,19 +24,6 @@ export default function Hero() {
         "};",
     ];
 
-    // --- Pre-generate particle positions only on client ---
-    const [particles, setParticles] = useState<Particle[]>([]);
-    useEffect(() => {
-        const generated = Array.from({ length: 20 }).map(() => ({
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            xOffset: Math.random() * 100 - 50,
-            duration: 3 + Math.random() * 2,
-            delay: Math.random() * 2,
-        }));
-        setParticles(generated);
-    }, []);
-
     return (
         <section
             ref={ref}
@@ -55,23 +34,23 @@ export default function Hero() {
 
             {/* Floating Particles */}
             <div className="absolute inset-0">
-                {particles.map((p, i) => (
+                {[...Array(20)].map((_, i) => (
                     <motion.div
                         key={i}
                         className="absolute w-1 h-1 bg-green-400 rounded-full"
                         animate={{
                             y: [0, -100, 0],
-                            x: [0, p.xOffset, 0],
+                            x: [0, Math.random() * 100 - 50, 0],
                             opacity: [0, 1, 0],
                         }}
                         transition={{
-                            duration: p.duration,
+                            duration: 3 + Math.random() * 2,
                             repeat: Infinity,
-                            delay: p.delay,
+                            delay: Math.random() * 2,
                         }}
                         style={{
-                            left: p.left,
-                            top: p.top,
+                            left: `${Math.random() * 100}%`,
+                            top: `${Math.random() * 100}%`,
                         }}
                     />
                 ))}
@@ -83,7 +62,7 @@ export default function Hero() {
             >
                 <div className="container mx-auto px-6 py-20">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        {/* Left Column */}
+                        {/* Left Column - Text Content */}
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -97,9 +76,7 @@ export default function Hero() {
                                     transition={{ delay: 0.3 }}
                                     className="flex items-center space-x-2 text-green-400"
                                 >
-                  <span className="text-sm font-mono">
-                    Hello World! I&apos;m
-                  </span>
+                                    <span className="text-sm font-mono">Hello World! I&apos;m</span>
                                 </motion.div>
 
                                 <motion.h1
@@ -170,7 +147,7 @@ export default function Hero() {
                             </motion.div>
                         </motion.div>
 
-                        {/* Right Column */}
+                        {/* Right Column - Code Animation */}
                         <motion.div
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -196,9 +173,7 @@ export default function Hero() {
                                             transition={{ delay: 0.9 + index * 0.2 }}
                                             className="text-gray-300"
                                         >
-                      <span className="text-gray-500 mr-4">
-                        {index + 1}
-                      </span>
+                                            <span className="text-gray-500 mr-4">{index + 1}</span>
                                             <span
                                                 dangerouslySetInnerHTML={{
                                                     __html: line
