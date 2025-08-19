@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { profile } from "@/data/portfolio";
@@ -24,9 +24,28 @@ export default function Hero() {
         "};",
     ];
 
+    // Client-only particles
+    const [particles, setParticles] = useState<
+        { left: number; top: number; xAnim: number; yAnim: number; delay: number; duration: number }[]
+    >([]);
+
+    useEffect(() => {
+        setParticles(
+            [...Array(20)].map(() => ({
+                left: Math.random() * 100,
+                top: Math.random() * 100,
+                xAnim: Math.random() * 100 - 50,
+                yAnim: -100,
+                delay: Math.random() * 2,
+                duration: 3 + Math.random() * 2,
+            }))
+        );
+    }, []);
+
     return (
         <section
             ref={ref}
+            id="about"
             className="min-h-screen bg-gray-950 relative overflow-hidden"
         >
             {/* Animated Background Grid */}
@@ -34,23 +53,23 @@ export default function Hero() {
 
             {/* Floating Particles */}
             <div className="absolute inset-0">
-                {[...Array(20)].map((_, i) => (
+                {particles.map((particle, i) => (
                     <motion.div
                         key={i}
                         className="absolute w-1 h-1 bg-green-400 rounded-full"
                         animate={{
-                            y: [0, -100, 0],
-                            x: [0, Math.random() * 100 - 50, 0],
+                            y: [0, particle.yAnim, 0],
+                            x: [0, particle.xAnim, 0],
                             opacity: [0, 1, 0],
                         }}
                         transition={{
-                            duration: 3 + Math.random() * 2,
+                            duration: particle.duration,
                             repeat: Infinity,
-                            delay: Math.random() * 2,
+                            delay: particle.delay,
                         }}
                         style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
+                            left: `${particle.left}%`,
+                            top: `${particle.top}%`,
                         }}
                     />
                 ))}
@@ -76,7 +95,9 @@ export default function Hero() {
                                     transition={{ delay: 0.3 }}
                                     className="flex items-center space-x-2 text-green-400"
                                 >
-                                    <span className="text-sm font-mono">Hello World! I&apos;m</span>
+                  <span className="text-sm font-mono">
+                    Hello World! I&apos;m
+                  </span>
                                 </motion.div>
 
                                 <motion.h1

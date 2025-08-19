@@ -33,7 +33,7 @@ export default function Contact() {
     };
 
     return (
-        <section ref={ref} className="py-20 bg-gray-950 relative overflow-hidden">
+        <section ref={ref} id={"contact"} className="py-20 bg-gray-950 relative overflow-hidden">
             {/* Background Effects */}
             <motion.div
                 style={{ y }}

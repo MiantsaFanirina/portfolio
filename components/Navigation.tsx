@@ -15,31 +15,69 @@ export default function Navigation() {
     });
 
     const navItems = [
-        { name: "Home", href: "#home" },
+        { name: "About Me", href: "#about" },
         { name: "Projects", href: "#projects" },
         { name: "Skills", href: "#skills" },
         { name: "Contact", href: "#contact" },
     ];
 
-    // Track which section is active using IntersectionObserver
+    // Track which section is active while scrolling
     useEffect(() => {
         const sections = document.querySelectorAll("section[id]");
+
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
+                        const id = entry.target.id;
+
+                        if (window.location.hash !== `#${id}`) {
+                            history.replaceState(null, "", `#${id}`);
+                            setActiveSection(id);
+                        }
                     }
                 });
             },
-            { threshold: 0.6 }
+            {
+                threshold: 0.4, // trigger when 40% of section is visible
+                rootMargin: "-80px 0px -40% 0px",
+                // top margin = height of navbar (80px)
+                // bottom margin = so next section becomes active before fully visible
+            }
         );
 
         sections.forEach((section) => observer.observe(section));
+
         return () => {
             sections.forEach((section) => observer.unobserve(section));
         };
     }, []);
+
+    // Handle case when page loads with a hash in the URL
+    useEffect(() => {
+        if (window.location.hash) {
+            const id = window.location.hash.replace("#", "");
+            setActiveSection(id);
+        }
+    }, []);
+
+    // Handle link click (desktop + mobile)
+    const handleNavClick = (href: string) => {
+        const sectionId = href.replace("#", "");
+        setIsMobileMenuOpen(false);
+
+        // Update URL first
+        history.replaceState(null, "", `#${sectionId}`);
+
+        // Then update active section
+        setActiveSection(sectionId);
+
+        // Smooth scroll to section
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    };
 
     return (
         <motion.nav
@@ -58,17 +96,17 @@ export default function Navigation() {
                         whileHover={{ scale: 1.05 }}
                         className="flex items-center space-x-2"
                     >
-            <span className="text-green-400 font-mono font-bold text-xl">
-              &lt;<span className="text-white">MiantsaFanirina</span>/&gt;
-            </span>
+                        <span className="text-green-400 font-mono font-bold text-xl">
+                            &lt;<span className="text-white">MiantsaFanirina</span>/&gt;
+                        </span>
                     </motion.div>
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-8">
                         {navItems.map((item, index) => (
-                            <motion.a
+                            <motion.button
                                 key={item.name}
-                                href={item.href}
+                                onClick={() => handleNavClick(item.href)}
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
@@ -80,7 +118,7 @@ export default function Navigation() {
                                 }`}
                             >
                                 {item.name}
-                            </motion.a>
+                            </motion.button>
                         ))}
                     </div>
 
@@ -109,24 +147,23 @@ export default function Navigation() {
                 >
                     <div className="py-4 space-y-2">
                         {navItems.map((item, index) => (
-                            <motion.a
+                            <motion.button
                                 key={item.name}
-                                href={item.href}
+                                onClick={() => handleNavClick(item.href)}
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{
                                     opacity: isMobileMenuOpen ? 1 : 0,
                                     x: isMobileMenuOpen ? 0 : -20,
                                 }}
                                 transition={{ delay: index * 0.1 }}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className={`block px-4 py-2 rounded transition-all ${
+                                className={`block w-full text-left px-4 py-2 rounded transition-all ${
                                     activeSection === item.href.replace("#", "")
                                         ? "text-green-400 bg-gray-800"
                                         : "text-gray-300 hover:text-green-400 hover:bg-gray-800"
                                 }`}
                             >
                                 {item.name}
-                            </motion.a>
+                            </motion.button>
                         ))}
                     </div>
                 </motion.div>

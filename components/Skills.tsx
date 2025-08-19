@@ -1,10 +1,18 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { skills, Skill } from "@/data/portfolio";
 
-const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
+const SkillCard = ({
+                       skill,
+                       index,
+                       scrollYProgress,
+                   }: {
+    skill: Skill;
+    index: number;
+    scrollYProgress: any;
+}) => {
     const getCategoryColor = (category: Skill["category"]) => {
         switch (category) {
             case "frontend":
@@ -20,13 +28,35 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
 
     const Logo = skill.logo;
 
+    // Randomized transition duration per card between 0.1s and 0.4s
+    const randomDuration = useMemo(() => 0.1 + Math.random() * 0.3, []);
+    const randomDelay = useMemo(() => Math.random() * 0.2, []);
+
+    // Random rotation between -6° and 6°
+    const randomRotate = useMemo(() => (Math.random() - 0.5) * 30, []);
+    // Random x movement between -10px and 10px
+    const randomX = useMemo(() => (Math.random() - 0.5) * 20, []);
+    // Random y movement between -10px and 10px
+    const randomY = useMemo(() => (Math.random() - 0.5) * 20, []);
+
+    // Parallax fade/scale with random rotation and x/y movement
+    const start = 0.6;
+    const end = 1;
+
+    const scale = useTransform(scrollYProgress, [start, end], [1, 0.4]);
+    const opacity = useTransform(scrollYProgress, [start, end], [1, 0]);
+    const rotate = useTransform(scrollYProgress, [start, end], [0, randomRotate]);
+    const x = useTransform(scrollYProgress, [start, end], [0, randomX]);
+    const y = useTransform(scrollYProgress, [start, end], [0, randomY]);
+
     return (
         <motion.div
+            style={{ scale, opacity, rotate, x, y }}
             initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: 0, x: 0, y: 0 }}
+            transition={{ duration: randomDuration, delay: randomDelay }}
             viewport={{ once: true }}
-            whileHover={{ y: -5 }}
+            whileHover={{ y: -5, scale: 1.05 }}
             className="snap-center flex-shrink-0 w-[75%] md:w-full px-4 md:px-0"
         >
             <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-gray-700 transition-all">
@@ -75,20 +105,15 @@ export default function Skills() {
         offset: ["start end", "end start"],
     });
 
-    const rotateX = useTransform(scrollYProgress, [0, 1], [0, 360]);
+    const layoutOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [1, 1, 0.8, 0.6]);
 
     return (
-        <section ref={ref} className="py-20 bg-gray-900 relative overflow-hidden">
-            {/* Animated Background Elements */}
-            <motion.div
-                style={{ rotateX }}
-                className="absolute top-1/4 right-10 w-32 h-32 border border-green-400/20 rounded-full"
-            />
-            <motion.div
-                style={{ rotateX: useTransform(scrollYProgress, [0, 1], [360, 0]) }}
-                className="absolute bottom-1/4 left-10 w-24 h-24 border border-blue-400/20 rounded-full"
-            />
-
+        <motion.section
+            ref={ref}
+            id="skills"
+            className="py-20 bg-gray-900 relative overflow-hidden"
+            style={{ opacity: layoutOpacity }}
+        >
             <div className="container mx-auto px-6 relative z-10">
                 {/* Section Header */}
                 <motion.div
@@ -98,118 +123,33 @@ export default function Skills() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.2 }}
-                        className="inline-block px-4 py-2 bg-blue-400/10 border border-blue-400/20 rounded-full text-blue-400 text-sm font-mono mb-4"
-                    >
-                        skills.map()
-                    </motion.div>
-
                     <h2 className="text-4xl md:text-6xl font-bold text-white font-mono mb-6">
                         Tech{" "}
                         <span className="text-transparent bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text">
               Stack
             </span>
                     </h2>
-
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                         A comprehensive toolkit built through years of hands-on experience and continuous learning.
                     </p>
                 </motion.div>
 
-                {/* Skills Layout */}
+                {/* Skills Grid */}
                 <div className="md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 hidden md:grid">
                     {skills.map((skill, index) => (
-                        <SkillCard key={skill.name} skill={skill} index={index} />
+                        <SkillCard key={skill.name} skill={skill} index={index} scrollYProgress={scrollYProgress} />
                     ))}
                 </div>
 
                 {/* Mobile Scroll Snap */}
                 <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory gap-4 py-4 -mx-4 px-4 scrollbar-hide">
                     {skills.map((skill, index) => (
-                        <SkillCard key={skill.name} skill={skill} index={index} />
+                        <SkillCard key={skill.name} skill={skill} index={index} scrollYProgress={scrollYProgress} />
                     ))}
                 </div>
-
-                {/* Advanced Swipe Right Hand Indicator */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5 }}
-                    className="relative left-1/2 transform -translate-x-1/2 md:hidden flex items-center justify-center"
-                >
-                    {/* Hand SVG */}
-                    <motion.svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-8 h-8 text-green-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                        animate={{ x: [0, 24, 0], scale: [1, 1.2, 1] }}
-                        transition={{
-                            duration: 1.5,
-                            repeat: Infinity,
-                            repeatType: "loop",
-                            ease: "easeInOut",
-                        }}
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M14 10l4 4m0 0l-4 4m4-4H3"
-                        />
-                    </motion.svg>
-
-                    {/* Optional subtle trail effect */}
-                    <motion.div
-                        className="absolute w-8 h-1 bg-green-400/50 rounded-full"
-                        animate={{ x: [0, 24, 0], opacity: [0.6, 0.2, 0.6] }}
-                        transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
-                    />
-                </motion.div>
-
-
-                {/* Categories Legend */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                    viewport={{ once: true }}
-                    className="flex flex-wrap justify-center gap-4 mt-12"
-                >
-                    {[
-                        { category: "frontend", color: "from-blue-400 to-cyan-400", label: "Frontend" },
-                        { category: "backend", color: "from-green-400 to-emerald-400", label: "Backend" },
-                        { category: "mobile", color: "from-purple-400 to-pink-400", label: "Mobile" },
-                        { category: "tools", color: "from-yellow-400 to-orange-400", label: "Tools" },
-                    ].map((item, index) => (
-                        <motion.div
-                            key={item.category}
-                            initial={{ opacity: 0, scale: 0 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.6 + index * 0.1 }}
-                            className="flex items-center space-x-2"
-                        >
-                            <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${item.color}`} />
-                            <span className="text-gray-400 text-sm">{item.label}</span>
-                        </motion.div>
-                    ))}
-                </motion.div>
             </div>
 
-            {/* Scrollbar Hide Styles */}
-            <style jsx>{`
-                .scrollbar-hide::-webkit-scrollbar {
-                    display: none;
-                }
-                .scrollbar-hide {
-                    -ms-overflow-style: none;
-                    scrollbar-width: none;
-                }
-            `}</style>
-        </section>
+
+        </motion.section>
     );
 }
