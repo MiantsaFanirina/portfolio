@@ -123,11 +123,15 @@ export default function Skills() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
+                    
+                    <div className="inline-block px-4 py-2 bg-green-400/10 border border-green-400/20 rounded-full text-green-400 text-sm font-mono mb-4">
+                        &lt; Stack /&gt;
+                    </div>
                     <h2 className="text-4xl md:text-6xl font-bold text-white font-mono mb-6">
                         Tech{" "}
                         <span className="text-transparent bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text">
-              Stack
-            </span>
+                            Stack
+                        </span>
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                         A comprehensive toolkit built through years of hands-on experience and continuous learning.
@@ -147,6 +151,45 @@ export default function Skills() {
                         <SkillCard key={skill.name} skill={skill} index={index} scrollYProgress={scrollYProgress} />
                     ))}
                 </div>
+
+                {/* Advanced Swipe Right Hand Indicator */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.5 }}
+                    className="relative left-1/2 transform -translate-x-1/2 md:hidden flex items-center justify-center"
+                >
+                    {/* Hand SVG */}
+                    <motion.svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-8 h-8 text-green-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        animate={{ x: [0, 24, 0], scale: [1, 1.2, 1] }}
+                        transition={{
+                            duration: 1.5,
+                            repeat: Infinity,
+                            repeatType: "loop",
+                            ease: "easeInOut",
+                        }}
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M14 10l4 4m0 0l-4 4m4-4H3"
+                        />
+                    </motion.svg>
+
+                    {/* Optional subtle trail effect */}
+                    <motion.div
+                        className="absolute w-8 h-1 bg-green-400/50 rounded-full"
+                        animate={{ x: [0, 24, 0], opacity: [0.6, 0.2, 0.6] }}
+                        transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
+                    />
+                </motion.div>
+
             </div>
 
 
