@@ -67,8 +67,37 @@ export const skills: Skill[] = [
 
 
 export const projects: Project[] = [
+
     {
         id: "1",
+        title: "Forex AI",
+        type: "web",
+        description: [
+            "Cutting-edge AI-powered Forex trading platform built with Next.js and modern web technologies.",
+            "Provides professional traders with advanced charting tools, AI-driven trading signals, and comprehensive market analysis capabilities.",
+            "Includes multiple chart types, technical indicators, AI recommendations with risk assessments, and real-time market data streaming."
+        ],
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Recharts"],
+        image: "/projects/forex-ai.png", // placeholder trading dashboard image
+        githubUrl: "https://github.com/MiantsaFanirina/forex-ai",
+        featured: true
+    },
+    {
+        id: "2",
+        title: "Forex Timeframe Alignment",
+        type: "web",
+        description: [
+            "Professional web application designed to help forex traders analyze and identify multi-timeframe alignment for better trading decisions.",
+            "Includes real-time visualization of forex timeframe alignment, smooth and intuitive user experience, and responsive design for desktop and mobile."
+        ],
+        technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+        image: "/projects/fx-alignment.png", // placeholder trading dashboard image
+        demoUrl: "https://professional-forex-timeframe-alignm.vercel.app",
+        githubUrl: "https://github.com/MiantsaFanirina/professional-forex-timeframe-alignment-analysis",
+        featured: true
+    },
+    {
+        id: "3",
         title: "Instagreen",
         type: "mobile",
         description: [
@@ -81,22 +110,8 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/MiantsaFanirina/Instagreen",
         featured: true
     },
-    // {
-    //     id: "2",
-    //     title: "Horizon",
-    //     type: "web",
-    //     description: [
-    //         "Modern banking service application with secure financial data integration.",
-    //         "Features include user authentication, bank account linking via Plaid, real-time balances and transactions, and a financial insights dashboard.",
-    //         "Designed with a clean and responsive UI for a seamless digital banking experience."
-    //     ],
-    //     technologies: ["Next.js", "Prisma", "Plaid", "Tailwind CSS", "PostgreSQL", "TypeScript"],
-    //     image: "/projects/horizon.png",
-    //     githubUrl: "https://github.com/demo/horizon",
-    //     featured: false
-    // },
     {
-        id: "2",
+        id: "4",
         title: "Mamisoa Hyacinthe – Portfolio",
         type: "web",
         description: [
@@ -109,37 +124,5 @@ export const projects: Project[] = [
         demoUrl: "https://portfolio-mamisoa.vercel.app",
         githubUrl: "https://github.com/MiantsaFanirina/PortfolioMamisoa",
         featured: false
-    }
-    ,
-    {
-        id: "3",
-        title: "Aloc-Cars",
-        type: "web",
-        description: [
-            "Car rental web application developed for the Swiss-based company aloccars.ch.",
-            "Includes vehicle browsing with filters, booking system with date selection, and an admin panel for managing cars and reservations.",
-            "Built with a robust Symfony backend and responsive Next.js frontend, featuring secure authentication and multilingual support (planned)."
-        ],
-        technologies: ["Symfony", "Next.js", "TypeScript", "Tailwind CSS", "MySQL", "Axios"],
-        image: "/projects/aloc-cars.png", // placeholder car rental image
-        demoUrl: "https://aloccars.ch",
-        githubUrl: "https://github.com/MiantsaFanirina/Aloc-Cars-Client",
-        featured: false
-    }
-    ,
-    {
-        id: "4",
-        title: "Forex Timeframe Alignment",
-        type: "web",
-        description: [
-            "Professional web application designed to help forex traders analyze and identify multi-timeframe alignment for better trading decisions.",
-            "Includes real-time visualization of forex timeframe alignment, smooth and intuitive user experience, and responsive design for desktop and mobile."
-        ],
-        technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-        image: "/projects/fx-alignment.png", // placeholder trading dashboard image
-        demoUrl: "https://professional-forex-timeframe-alignm.vercel.app",
-        githubUrl: "https://github.com/MiantsaFanirina/professional-forex-timeframe-alignment-analysis",
-        featured: true
-    }
-
+    },
 ];
