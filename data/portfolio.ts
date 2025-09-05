@@ -92,8 +92,8 @@ export const projects: Project[] = [
         ],
         technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
         image: "/projects/fx-alignment.png", // placeholder trading dashboard image
-        demoUrl: "https://professional-forex-timeframe-alignm.vercel.app",
-        githubUrl: "https://github.com/MiantsaFanirina/professional-forex-timeframe-alignment-analysis",
+        demoUrl: "https://forex-alignment.vercel.app",
+        githubUrl: "https://github.com/MiantsaFanirina/forex-alignment",
         featured: true
     },
     {
