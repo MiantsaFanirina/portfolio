@@ -38,6 +38,13 @@ export function Navigation() {
     setOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   const go = (id: string) => {
     setOpen(false);
     if (location.pathname === "/") {

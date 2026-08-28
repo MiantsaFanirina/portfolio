@@ -166,16 +166,20 @@
   background: var(--bg);
   z-index: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: var(--gutter);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: calc(clamp(58px, 4vw, 76px) + var(--s-34)) var(--gutter) var(--s-34);
 }
 .nav__overlay-list {
   width: 100%;
   max-width: var(--maxw);
+  margin-block: auto;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  gap: var(--s-13);
+  gap: var(--s-21);
 }
 .nav__overlay-list li button,
 .nav__overlay-list li a {
@@ -194,4 +198,15 @@
   font-size: var(--text-sm);
   color: var(--accent);
   letter-spacing: var(--tracking-wide);
+}
+
+@media (max-width: 480px) {
+  .nav__overlay-list li button,
+  .nav__overlay-list li a {
+    font-size: var(--text-h3);
+    gap: var(--s-13);
+  }
+  .nav__overlay-list {
+    gap: var(--s-13);
+  }
 }
