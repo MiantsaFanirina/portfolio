@@ -158,9 +158,10 @@ export const projects: Project[] = [
     year: "2025",
     technologies: ["Next.js", "Symfony", "TypeScript", "MySQL", "Tailwind CSS", "Axios"],
     githubUrl: "https://github.com/MiantsaFanirina/Aloc-Cars-Client",
-    liveUrl: "https://www.aloccars.ch",
+    liveUrl: "https://aloccars.vercel.app/",
     previewMode: "iframe",
-    tier: "selected",
+    tier: "featured",
+    featured: true,
     role: {
       en: "Frontend & integration",
       fr: "Frontend & intégration",
