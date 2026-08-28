@@ -118,8 +118,7 @@ export const projects: Project[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Electron", "PixiJS"],
     githubUrl: "https://github.com/MiantsaFanirina/map-editor",
     previewMode: "image",
-    tier: "featured",
-    featured: true,
+    tier: "selected",
     images: [
       "/img/tilemap-editor/Screenshot-0.png",
       "/img/tilemap-editor/Screenshot-1.png",
@@ -198,7 +197,8 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/MiantsaFanirina/phone-case-maker",
     liveUrl: "https://ipcasemaker.vercel.app/designs",
     previewMode: "iframe",
-    tier: "selected",
+    tier: "featured",
+    featured: true,
     role: {
       en: "Solo developer",
       fr: "Développeur en autonomie",
