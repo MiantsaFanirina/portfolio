@@ -108,12 +108,12 @@ export function ProjectPreview({ project, variant = "card", eager = false }: Pro
       <span className="pp__fallback-cat">{project.category.en}</span>
       <div className="pp__fallback-actions">
         {project.liveUrl && (
-          <a className="pp__btn" href={project.liveUrl} target="_blank" rel="noreferrer noopener">
+          <a className="pp__btn" href={project.liveUrl} target="_blank" rel="noreferrer noopener" onClick={(e) => e.stopPropagation()}>
             {t.work.openProject} ↗
           </a>
         )}
         {project.githubUrl && (
-          <a className="pp__btn pp__btn--ghost" href={project.githubUrl} target="_blank" rel="noreferrer noopener">
+          <a className="pp__btn pp__btn--ghost" href={project.githubUrl} target="_blank" rel="noreferrer noopener" onClick={(e) => e.stopPropagation()}>
             {t.work.viewSource} ↗
           </a>
         )}
@@ -146,6 +146,7 @@ export function ProjectPreview({ project, variant = "card", eager = false }: Pro
                 target="_blank"
                 rel="noreferrer noopener"
                 title={t.a11y.openNew}
+                onClick={(e) => e.stopPropagation()}
               >
                 <span className="pp__act-label">{t.work.openSite}</span>
                 <span aria-hidden="true">↗</span>
@@ -158,6 +159,7 @@ export function ProjectPreview({ project, variant = "card", eager = false }: Pro
                 target="_blank"
                 rel="noreferrer noopener"
                 title={t.a11y.openNew}
+                onClick={(e) => e.stopPropagation()}
               >
                 <span className="pp__act-label">{t.work.github}</span>
                 <span aria-hidden="true">{"</>"}</span>
