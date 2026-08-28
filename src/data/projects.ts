@@ -197,8 +197,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/MiantsaFanirina/phone-case-maker",
     liveUrl: "https://ipcasemaker.vercel.app/designs",
     previewMode: "iframe",
-    tier: "featured",
-    featured: true,
+    tier: "selected",
     role: {
       en: "Solo developer",
       fr: "Développeur en autonomie",
