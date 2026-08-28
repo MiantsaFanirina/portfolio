@@ -29,7 +29,6 @@ function showcasedSlugs() {
 export function Github() {
   const { t, lang } = useLanguage();
   const [repos, setRepos] = useState<GhRepo[] | null>(null);
-  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -65,7 +64,7 @@ export function Github() {
         }
       })
       .catch(() => {
-        if (!cancelled) setFailed(true);
+        /* keep curated fallback */
       });
     return () => {
       cancelled = true;
