@@ -78,7 +78,7 @@ export const fr: Locale = {
     title: "Code & Open Source",
     meta: "Depuis GitHub",
     view: "Voir GitHub",
-    subtitle: "Dépôts sélectionnés",
+    subtitle: "Dépôts publics · mis à jour en direct depuis GitHub",
   },
   contact: {
     label: "Contact",

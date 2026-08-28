@@ -76,7 +76,7 @@ export const en = {
     title: "Code & Open Source",
     meta: "From GitHub",
     view: "View GitHub",
-    subtitle: "Selected repositories",
+    subtitle: "Public repositories · updated live from GitHub",
   },
   contact: {
     label: "Contact",
