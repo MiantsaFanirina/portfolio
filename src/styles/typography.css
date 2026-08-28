@@ -1,0 +1,97 @@
+/* ============================================================
+   typography.css — display, headings, body, labels, metadata
+   ============================================================ */
+
+.t-display {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  line-height: 0.86;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+
+.t-h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+
+.t-h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  line-height: 1;
+  letter-spacing: -0.005em;
+  font-weight: 500;
+}
+
+.t-h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  line-height: var(--leading-snug);
+  font-weight: 500;
+}
+
+.t-h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-h4);
+  line-height: var(--leading-snug);
+  font-weight: 600;
+}
+
+.t-lead {
+  font-size: var(--text-lead);
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.t-body {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--text-2);
+}
+
+.t-muted {
+  color: var(--text-muted);
+}
+
+/* Technical label — mono, tracked out */
+.t-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-2);
+  font-weight: 500;
+}
+
+.t-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-2);
+}
+
+.t-index {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.t-serif-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-clip {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

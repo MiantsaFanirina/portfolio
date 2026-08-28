@@ -1,0 +1,305 @@
+.pp {
+  --pp-radius: 4px;
+  position: relative;
+  width: 100%;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--pp-radius);
+  overflow: hidden;
+}
+
+.pp__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--s-13);
+  padding: 0.7rem var(--s-13);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-3);
+}
+
+.pp__dots {
+  display: inline-flex;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+.pp__dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--line-strong);
+  display: block;
+}
+.pp__dots i:first-child {
+  background: var(--accent);
+}
+
+.pp__host {
+  flex: 1 1 auto;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-2);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pp__actions {
+  display: inline-flex;
+  gap: var(--s-8);
+  flex: 0 0 auto;
+}
+.pp__act {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-2);
+  padding: 2px 6px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+.pp__act:hover {
+  color: var(--text);
+  border-color: var(--line);
+}
+.pp__act-label {
+  display: none;
+}
+@media (min-width: 768px) {
+  .pp__act-label {
+    display: inline;
+  }
+}
+
+.pp__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #fff;
+}
+
+.pp--page .pp__frame {
+  aspect-ratio: 16 / 10;
+}
+
+.pp__iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity var(--dur-mid) var(--ease-out);
+  border: 0;
+  background: #fff;
+}
+.pp__iframe.is-loaded {
+  opacity: 1;
+}
+
+.pp__loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-13);
+}
+.pp__loading-text {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.pp__loading-bar {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: mf-shimmer 1.4s linear infinite;
+}
+
+/* ---- Fallback (github mode / load failure) ---- */
+.pp__fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--s-8);
+  padding: var(--s-34);
+  background:
+    radial-gradient(120% 120% at 100% 0%, rgba(255, 91, 52, 0.08), transparent 60%),
+    var(--bg-2);
+}
+.pp__fallback-note {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.pp__fallback-title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  line-height: 1;
+  color: var(--text);
+}
+.pp__fallback-cat {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+.pp__fallback-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-13);
+  margin-top: var(--s-13);
+}
+.pp__btn {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-wide);
+  color: var(--on-accent);
+  background: var(--text);
+  padding: 0.55rem 1rem;
+  border-radius: 2px;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+.pp__btn:hover {
+  background: var(--accent);
+}
+.pp__btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line-strong);
+}
+.pp__btn--ghost:hover {
+  background: var(--bg-3);
+  color: var(--text);
+  border-color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .pp__frame,
+  .pp--page .pp__frame {
+    aspect-ratio: 9 / 16;
+  }
+  .pp__fallback {
+    padding: var(--s-21);
+  }
+}
+
+/* ---- Mobile: iPhone device mockup ---- */
+.pp--mobile {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pp--mobile .pp__bar {
+  display: none;
+}
+
+.pp__phone {
+  position: relative;
+  width: clamp(240px, 70%, 320px);
+  aspect-ratio: 320 / 660;
+  margin: var(--s-21) 0;
+  padding: 14px;
+  background: linear-gradient(160deg, #1c1c20, #0a0a0c);
+  border-radius: 46px;
+  box-shadow:
+    0 40px 80px -30px rgba(0, 0, 0, 0.7),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.06);
+}
+.pp__phone::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130px;
+  height: 26px;
+  background: #0a0a0c;
+  border-radius: 0 0 16px 16px;
+  z-index: 6;
+}
+.pp__phone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #fff;
+}
+.pp--page .pp__phone {
+  width: clamp(260px, 70%, 360px);
+}
+
+/* ---- Image showcase (repos without a live site) ---- */
+.pp__gallery {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-2);
+}
+.pp__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  background: var(--bg-2);
+}
+.pp__thumbs {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 6px;
+  padding: 10px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+}
+.pp__thumb {
+  width: 56px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: 0.6;
+  transition:
+    opacity var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+.pp__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pp__thumb.is-active,
+.pp__thumb:hover {
+  opacity: 1;
+  border-color: var(--accent);
+}
+

@@ -1,0 +1,90 @@
+/* ============================================================
+   tokens.css — centralized design tokens
+   Color · Type · Spacing · Motion · Layout · Z-index
+   Fibonacci-inspired rhythm (8,13,21,34,55,89,144,233,377)
+   ============================================================ */
+
+:root {
+  /* ---- Color ---- */
+  --bg: #0b0b0c;
+  --bg-2: #131315;
+  --bg-3: #1b1b1e;
+  --surface: #17171a;
+
+  --text: #ece7dd;
+  --text-2: #a39f97;
+  --text-muted: #68665f;
+
+  --accent: #ff5b34;
+  --accent-soft: rgba(255, 91, 52, 0.14);
+  --accent-line: rgba(255, 91, 52, 0.4);
+
+  --line: rgba(236, 231, 221, 0.12);
+  --line-strong: rgba(236, 231, 221, 0.22);
+  --line-faint: rgba(236, 231, 221, 0.06);
+
+  --on-accent: #0b0b0c;
+
+  /* ---- Typography families ---- */
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* ---- Fluid type scale (clamp) ---- */
+  --text-xs: clamp(0.66rem, 0.62rem + 0.2vw, 0.74rem);
+  --text-sm: clamp(0.78rem, 0.74rem + 0.2vw, 0.86rem);
+  --text-body: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
+  --text-lead: clamp(1.15rem, 1.02rem + 0.6vw, 1.45rem);
+  --text-h4: clamp(1.35rem, 1.1rem + 1vw, 1.9rem);
+  --text-h3: clamp(1.9rem, 1.4rem + 2vw, 3rem);
+  --text-h2: clamp(2.6rem, 1.8rem + 3.4vw, 4.8rem);
+  --text-h1: clamp(3.4rem, 2rem + 6vw, 8rem);
+  --text-display: clamp(4.5rem, 2rem + 12vw, 15rem);
+
+  --leading-tight: 0.95;
+  --leading-snug: 1.08;
+  --leading-body: 1.6;
+
+  --tracking-label: 0.22em;
+  --tracking-wide: 0.04em;
+
+  /* ---- Fibonacci spacing ---- */
+  --s-8: 0.5rem;
+  --s-13: 0.8125rem;
+  --s-21: 1.3125rem;
+  --s-34: 2.125rem;
+  --s-55: 3.4375rem;
+  --s-89: 5.5625rem;
+  --s-144: 9rem;
+  --s-233: 14.5625rem;
+  --s-377: 23.5625rem;
+
+  /* fluid section rhythm */
+  --section-y: clamp(5rem, 3rem + 9vw, 9rem);
+  --gutter: clamp(1.25rem, 0.5rem + 3.5vw, 5.5rem);
+  --maxw: 1600px;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 0.28s;
+  --dur-mid: 0.6s;
+  --dur-slow: 1s;
+
+  /* ---- Z-index ---- */
+  --z-cursor: 9999;
+  --z-nav: 800;
+  --z-overlay: 700;
+  --z-modal: 900;
+}
+
+/* Light editorial variant for embeds/paper blocks */
+:root[data-theme="paper"] {
+  --bg: #f4f1ea;
+  --bg-2: #ece8df;
+  --text: #16140f;
+  --text-2: #4c473d;
+  --text-muted: #8a8475;
+  --line: rgba(22, 20, 15, 0.14);
+}

@@ -1,0 +1,34 @@
+.statement {
+  padding-block: var(--section-y);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.statement__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-34);
+}
+.statement__label {
+  color: var(--accent);
+}
+.statement__text {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  line-height: 1.08;
+  max-width: 22ch;
+  color: var(--text);
+}
+.statement__mark {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: var(--text-h1);
+  color: var(--accent);
+  line-height: 1;
+}
+@media (max-width: 768px) {
+  .statement__mark {
+    display: none;
+  }
+}

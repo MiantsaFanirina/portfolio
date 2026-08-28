@@ -1,0 +1,48 @@
+/* ============================================================
+   responsive.css — shared breakpoints + global responsive rules
+   ============================================================ */
+
+:root {
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1080px;
+  --bp-xl: 1440px;
+}
+
+/* Tighten section rhythm on small screens */
+@media (max-width: 768px) {
+  :root {
+    --section-y: clamp(3.5rem, 2.5rem + 6vw, 5rem);
+    --gutter: 1.25rem;
+  }
+  .section-head {
+    flex-wrap: wrap;
+    gap: var(--s-13);
+  }
+  .section-head__meta {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* Prevent horizontal overflow everywhere */
+html,
+body {
+  overflow-x: hidden;
+}
+
+* {
+  max-width: 100%;
+}
+
+img,
+iframe {
+  max-width: 100%;
+}
+
+/* Respect reduced motion globally for transform-based parallax */
+@media (prefers-reduced-motion: reduce) {
+  [data-parallax] {
+    transform: none !important;
+  }
+}

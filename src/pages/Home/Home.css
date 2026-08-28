@@ -1,0 +1,4 @@
+/* Home layout — sections own their own spacing. */
+.home {
+  display: block;
+}
