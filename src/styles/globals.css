@@ -36,7 +36,8 @@ body {
 }
 
 @media (pointer: fine) {
-  body.has-cursor {
+  body.has-cursor,
+  body.has-cursor * {
     cursor: none;
   }
 }
