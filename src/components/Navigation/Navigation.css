@@ -220,7 +220,7 @@
   position: fixed;
   inset: 0;
   background: var(--bg);
-  z-index: 1;
+  z-index: var(--z-overlay);
   display: flex;
   flex-direction: column;
   align-items: center;
