@@ -41,9 +41,20 @@ export function Navigation() {
   }, [location.pathname]);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    const { body, documentElement } = document;
+    if (open) {
+      body.style.overflow = "hidden";
+      body.style.touchAction = "none";
+      documentElement.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "";
+      body.style.touchAction = "";
+      documentElement.style.overflow = "";
+    }
     return () => {
-      document.body.style.overflow = "";
+      body.style.overflow = "";
+      body.style.touchAction = "";
+      documentElement.style.overflow = "";
     };
   }, [open]);
 

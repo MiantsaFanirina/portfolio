@@ -226,6 +226,7 @@
   align-items: center;
   overflow-y: auto;
   overscroll-behavior: contain;
+  touch-action: pan-y;
   padding: calc(clamp(58px, 4vw, 76px) + var(--s-34)) var(--gutter) var(--s-34);
 }
 .nav__overlay-list {
