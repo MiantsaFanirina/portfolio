@@ -28,6 +28,7 @@ export function Navigation() {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [menuKey, setMenuKey] = useState(0);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -69,7 +70,8 @@ export function Navigation() {
   };
 
   return (
-    <header className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
+    <>
+      <header className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
       <div className="nav__inner container">
         <Link
           to="/"
@@ -144,7 +146,13 @@ export function Navigation() {
 
           <button
             className="nav__burger"
-            onClick={() => setOpen((o) => !o)}
+            onClick={() =>
+              setOpen((o) => {
+                const next = !o;
+                if (next) setMenuKey((k) => k + 1);
+                return next;
+              })
+            }
             aria-expanded={open}
             aria-label={open ? t.nav.close : t.nav.menu}
           >
@@ -154,11 +162,13 @@ export function Navigation() {
             </span>
           </button>
         </div>
-      </div>
+    </div>
+    </header>
 
-      <AnimatePresence>
+    <AnimatePresence>
         {open && (
           <motion.div
+            key={menuKey}
             className="nav__overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -204,7 +214,7 @@ export function Navigation() {
             </motion.ul>
           </motion.div>
         )}
-      </AnimatePresence>
-    </header>
+    </AnimatePresence>
+  </>
   );
 }
