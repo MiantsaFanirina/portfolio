@@ -102,7 +102,7 @@ export function Github() {
     <section className="gh section" id="github">
       <div className="container">
         <div className="section-head">
-          <span className="section-head__index">07 — {t.github.label}</span>
+          <span className="section-head__index">07 - {t.github.label}</span>
           <h2 className="section-head__title">{t.github.title}</h2>
           <a
             className="section-head__meta link-underline"

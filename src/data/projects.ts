@@ -39,8 +39,8 @@ export const projects: Project[] = [
     slug: "miangola",
     title: "Miangola",
     description: {
-      en: "The flagship live web application — the latest production build deployed on Vercel, featured as the primary showcase.",
-      fr: "L'application web phare — la dernière build de production déployée sur Vercel, mise en avant comme vitrine principale.",
+      en: "The flagship live web application, the latest production build deployed on Vercel, featured as the primary showcase.",
+      fr: "L'application web phare, la dernière build de production déployée sur Vercel, mise en avant comme vitrine principale.",
     },
     category: { en: "Web · Flagship", fr: "Web · Phare" },
     categoryKey: "web",
@@ -71,7 +71,7 @@ export const projects: Project[] = [
   {
     id: "mamisoa",
     slug: "mamisoa-portfolio",
-    title: "Mamisoa Hyacinthe — Portfolio",
+    title: "Mamisoa Hyacinthe - Portfolio",
     description: {
       en: "A commissioned portfolio for a client, built with cinematic motion and editorial composition.",
       fr: "Un portfolio commandé pour un client, avec un motion design cinématographique et une composition éditoriale.",
@@ -263,8 +263,8 @@ export const projects: Project[] = [
     slug: "portfolio-v1",
     title: "Portfolio v1",
     description: {
-      en: "The previous iteration of this portfolio — a deployed personal site.",
-      fr: "L'itération précédente de ce portfolio — un site personnel déployé.",
+      en: "The previous iteration of this portfolio, a deployed personal site.",
+      fr: "L'itération précédente de ce portfolio, un site personnel déployé.",
     },
     category: { en: "Web · Archive", fr: "Web · Archive" },
     categoryKey: "web",

@@ -1,6 +1,6 @@
 export const en = {
   meta: {
-    title: "Miantsa Fanirina — Full-Stack Web & Mobile Developer",
+    title: "Miantsa Fanirina - Full-Stack Web & Mobile Developer",
     description:
       "Portfolio of Miantsa Fanirina, a full-stack web and mobile developer. Selected work across fintech, trading tooling, mobile and editorial web.",
   },
@@ -24,12 +24,12 @@ export const en = {
   },
   statement: {
     label: "Statement",
-    body: "I build digital experiences from interface to infrastructure — web, mobile, and the systems between.",
+    body: "I build digital experiences from interface to infrastructure: web, mobile, and the systems between.",
   },
   work: {
     label: "Selected Work",
     title: "Selected Work",
-    meta: "Projects / 2024—2026",
+    meta: "Projects / 2024–2026",
     featured: "Featured",
     all: "All",
     viewProject: "View project",

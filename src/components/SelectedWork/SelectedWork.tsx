@@ -34,7 +34,7 @@ export function SelectedWork() {
     <section className="work section" id="work">
       <div className="container">
         <div className="section-head">
-          <span className="section-head__index">02 — {t.work.label}</span>
+          <span className="section-head__index">02 - {t.work.label}</span>
           <h2 className="section-head__title">{t.work.title}</h2>
           <span className="section-head__meta">{t.work.meta}</span>
         </div>

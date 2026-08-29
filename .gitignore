@@ -23,7 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-# Local CV reference (contains personal data) — kept out of the repo
+# Local CV reference (contains personal data): kept out of the repo
 *.pdf
 CV Miantsa Fanirina Rakotondrafara.pdf
 

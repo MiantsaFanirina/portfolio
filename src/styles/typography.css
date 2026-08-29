@@ -1,5 +1,5 @@
 /* ============================================================
-   typography.css — display, headings, body, labels, metadata
+   typography.css: display, headings, body, labels, metadata
    ============================================================ */
 
 .t-display {
@@ -56,7 +56,7 @@
   color: var(--text-muted);
 }
 
-/* Technical label — mono, tracked out */
+/* Technical label: mono, tracked out */
 .t-label {
   font-family: var(--font-mono);
   font-size: var(--text-xs);

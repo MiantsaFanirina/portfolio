@@ -70,7 +70,7 @@ export function ProjectPreview({ project, variant = "card", eager = false }: Pro
       <iframe
         className={`pp__iframe ${loaded ? "is-loaded" : ""}`}
         src={project.liveUrl}
-        title={`${project.title} — ${t.preview.liveLabel}`}
+        title={`${project.title} - ${t.preview.liveLabel}`}
         loading="lazy"
         tabIndex={loaded ? 0 : -1}
         onLoad={() => setLoaded(true)}

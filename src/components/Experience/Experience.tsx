@@ -11,7 +11,7 @@ export function Experience() {
     <section className="exp section" id="experience">
       <div className="container">
         <div className="section-head">
-          <span className="section-head__index">06 — {t.experience.label}</span>
+          <span className="section-head__index">06 - {t.experience.label}</span>
           <h2 className="section-head__title">{t.experience.title}</h2>
           <span className="section-head__meta">{t.experience.meta}</span>
         </div>

@@ -153,11 +153,11 @@ export const experience: ExperienceItem[] = [
 ];
 
 export const heroStatement = {
-  en: "I build digital experiences from interface to infrastructure — web, mobile, and the systems between.",
-  fr: "Je construis des expériences numériques de l'interface à l'infrastructure — web, mobile et les systèmes entre les deux.",
+  en: "I build digital experiences from interface to infrastructure: web, mobile, and the systems between.",
+  fr: "Je construis des expériences numériques de l'interface à l'infrastructure : web, mobile et les systèmes entre les deux.",
 } as Localized;
 
 export const aboutText = {
-  en: "Miantsa is a full-stack developer working across the web and mobile. The practice moves between product interfaces, real-time systems and the backend glue that holds them together — always with an eye for motion, typography and the small details that make software feel considered. Recent work spans fintech, trading tooling, game editors and commissioned portfolios.",
-  fr: "Miantsa est un développeur full-stack évoluant entre le web et le mobile. La pratique navigue entre interfaces produit, systèmes temps réel et la couche backend qui les relie — avec un soin constant pour le motion, la typographie et les détails qui rendent un logiciel pensé. Les travaux récents couvrent la fintech, les outils de trading, les éditeurs de jeux et des portfolios commandés.",
+  en: "Miantsa is a full-stack developer working across the web and mobile. The practice moves between product interfaces, real-time systems and the backend glue that holds them together: always with an eye for motion, typography and the small details that make software feel considered. Recent work spans fintech, trading tooling, game editors and commissioned portfolios.",
+  fr: "Miantsa est un développeur full-stack évoluant entre le web et le mobile. La pratique navigue entre interfaces produit, systèmes temps réel et la couche backend qui les relie : avec un soin constant pour le motion, la typographie et les détails qui rendent un logiciel pensé. Les travaux récents couvrent la fintech, les outils de trading, les éditeurs de jeux et des portfolios commandés.",
 } as Localized;

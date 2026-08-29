@@ -10,7 +10,7 @@ export function Capabilities() {
     <section className="caps section" id="capabilities">
       <div className="container">
         <div className="section-head">
-          <span className="section-head__index">04 — {t.capabilities.label}</span>
+          <span className="section-head__index">04 - {t.capabilities.label}</span>
           <h2 className="section-head__title">{t.capabilities.title}</h2>
           <span className="section-head__meta">{t.capabilities.meta}</span>
         </div>

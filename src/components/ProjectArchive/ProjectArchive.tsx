@@ -22,7 +22,7 @@ export function ProjectArchive() {
     <section className="archive section" id="archive" onMouseMove={onMove}>
       <div className="container">
         <div className="section-head">
-          <span className="section-head__index">08 — {t.archive.label}</span>
+          <span className="section-head__index">08 - {t.archive.label}</span>
           <h2 className="section-head__title">{t.archive.title}</h2>
           <span className="section-head__meta">{t.archive.meta}</span>
         </div>

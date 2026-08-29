@@ -2,7 +2,7 @@ import type { Locale } from "./en";
 
 export const fr: Locale = {
   meta: {
-    title: "Miantsa Fanirina — Développeur Full-Stack Web & Mobile",
+    title: "Miantsa Fanirina - Développeur Full-Stack Web & Mobile",
     description:
       "Portfolio de Miantsa Fanirina, développeur full-stack web et mobile. Travaux sélectionnés en fintech, outils de trading, mobile et web éditorial.",
   },
@@ -26,12 +26,12 @@ export const fr: Locale = {
   },
   statement: {
     label: "Manifeste",
-    body: "Je construis des expériences numériques de l'interface à l'infrastructure — web, mobile et les systèmes entre les deux.",
+    body: "Je construis des expériences numériques de l'interface à l'infrastructure : web, mobile et les systèmes entre les deux.",
   },
   work: {
     label: "Travaux sélectionnés",
     title: "Travaux sélectionnés",
-    meta: "Projets / 2024—2026",
+    meta: "Projets / 2024–2026",
     featured: "À la une",
     all: "Tous",
     viewProject: "Voir le projet",

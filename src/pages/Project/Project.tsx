@@ -17,7 +17,7 @@ export function Project() {
 
   useEffect(() => {
     if (project) {
-      document.title = `${project.title} — Miantsa Fanirina`;
+      document.title = `${project.title} - Miantsa Fanirina`;
       const meta = document.querySelector('meta[name="description"]');
       if (meta) meta.setAttribute("content", project.description.en);
     }
@@ -86,7 +86,7 @@ export function Project() {
             </div>
             <div>
               <dt className="t-label">Role</dt>
-              <dd className="t-mono">{project.role?.[lang] ?? "—"}</dd>
+              <dd className="t-mono">{project.role?.[lang] ?? "-"}</dd>
             </div>
             <div>
               <dt className="t-label">Category</dt>

@@ -13,7 +13,7 @@ export function About() {
     <section className="about section" id="about">
       <div className="container about__inner">
         <div className="about__head">
-          <span className="section-head__index">05 — {t.about.label}</span>
+          <span className="section-head__index">05 - {t.about.label}</span>
           <h2 className="section-head__title">{t.about.title}</h2>
         </div>
 
