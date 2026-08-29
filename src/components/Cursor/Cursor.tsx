@@ -46,9 +46,7 @@ export function Cursor() {
       }
     };
     const over = (e: MouseEvent) => {
-      const t = e.target as HTMLElement;
-      if (t instanceof HTMLIFrameElement && !t.hasAttribute("data-cursor"))
-        setOverIframe(true);
+      if (e.target instanceof HTMLIFrameElement) setOverIframe(true);
     };
     const out = (e: MouseEvent) => {
       if (e.target instanceof HTMLIFrameElement) setOverIframe(false);

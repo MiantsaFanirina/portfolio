@@ -75,7 +75,6 @@ export function ProjectPreview({ project, variant = "card", eager = false }: Pro
         tabIndex={loaded ? 0 : -1}
         onLoad={() => setLoaded(true)}
         onError={onIframeError}
-        data-cursor="OPEN"
       />
     </>
   ) : showImage ? (
