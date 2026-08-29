@@ -75,6 +75,7 @@ export function ProjectPreview({ project, variant = "card", eager = false }: Pro
         tabIndex={loaded ? 0 : -1}
         onLoad={() => setLoaded(true)}
         onError={onIframeError}
+        data-cursor="OPEN"
       />
     </>
   ) : showImage ? (
@@ -146,6 +147,7 @@ export function ProjectPreview({ project, variant = "card", eager = false }: Pro
                 target="_blank"
                 rel="noreferrer noopener"
                 title={t.a11y.openNew}
+                data-cursor="OPEN"
                 onClick={(e) => e.stopPropagation()}
               >
                 <span className="pp__act-label">{t.work.openSite}</span>
@@ -159,6 +161,7 @@ export function ProjectPreview({ project, variant = "card", eager = false }: Pro
                 target="_blank"
                 rel="noreferrer noopener"
                 title={t.a11y.openNew}
+                data-cursor="OPEN"
                 onClick={(e) => e.stopPropagation()}
               >
                 <span className="pp__act-label">{t.work.github}</span>
