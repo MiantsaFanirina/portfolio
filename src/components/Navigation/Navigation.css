@@ -121,6 +121,62 @@
   color: var(--line-strong);
 }
 
+.nav__theme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text-2);
+  border-radius: 999px;
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+}
+.nav__theme:hover {
+  color: var(--text);
+  background: var(--accent-soft);
+}
+.nav__theme-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.nav__theme-sun,
+.nav__theme-moon {
+  position: absolute;
+  inset: 0;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  transition:
+    opacity var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+.nav__theme-sun circle {
+  fill: currentColor;
+  stroke: none;
+}
+.nav__theme-sun {
+  opacity: 0;
+  transform: rotate(-45deg) scale(0.6);
+}
+.nav__theme-moon {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+:root[data-theme="light"] .nav__theme-sun {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+:root[data-theme="light"] .nav__theme-moon {
+  opacity: 0;
+  transform: rotate(45deg) scale(0.6);
+}
+
 .nav__burger {
   display: inline-flex;
   align-items: center;

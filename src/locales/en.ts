@@ -100,11 +100,17 @@ export const en = {
     loading: "Loading project",
     liveLabel: "Live",
   },
+  theme: {
+    light: "Light",
+    dark: "Dark",
+  },
   a11y: {
     openNew: "Opens in a new tab",
     langSwitch: "Switch language",
     mainNav: "Main navigation",
     skip: "Skip to content",
+    themeLight: "Switch to light mode",
+    themeDark: "Switch to dark mode",
   },
 };
 

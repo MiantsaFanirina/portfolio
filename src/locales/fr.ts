@@ -102,10 +102,16 @@ export const fr: Locale = {
     loading: "Chargement du projet",
     liveLabel: "Live",
   },
+  theme: {
+    light: "Clair",
+    dark: "Sombre",
+  },
   a11y: {
     openNew: "Ouvre dans un nouvel onglet",
     langSwitch: "Changer de langue",
     mainNav: "Navigation principale",
     skip: "Aller au contenu",
+    themeLight: "Passer en mode clair",
+    themeDark: "Passer en mode sombre",
   },
 };
