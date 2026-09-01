@@ -2,9 +2,9 @@ import type { Locale } from "./en";
 
 export const fr: Locale = {
   meta: {
-    title: "Miantsa Fanirina - Développeur Full-Stack Web & Mobile",
+    title: "Miantsa Fanirina — Portfolio",
     description:
-      "Portfolio de Miantsa Fanirina, développeur full-stack web et mobile. Travaux sélectionnés en fintech, outils de trading, mobile et web éditorial.",
+      "Portfolio de Miantsa Fanirina, développeur web et mobile full-stack. Projets sélectionnés en fintech, outils de trading, mobile et web éditorial.",
   },
   nav: {
     work: "Travaux",
