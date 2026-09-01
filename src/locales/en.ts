@@ -1,6 +1,6 @@
 export const en = {
   meta: {
-    title: "Miantsa Fanirina — Portfolio",
+    title: "Miantsa Fanirina - Full-Stack Web & Mobile Developer",
     description:
       "Portfolio of Miantsa Fanirina, a full-stack web and mobile developer. Selected work across fintech, trading tooling, mobile and editorial web.",
   },
