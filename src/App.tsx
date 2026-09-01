@@ -20,10 +20,12 @@ export function App() {
   const { t } = useLanguage();
 
   useEffect(() => {
-    document.title = t.meta.title;
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", t.meta.description);
-  }, [t]);
+    if (location.pathname === "/") {
+      document.title = t.meta.title;
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta) meta.setAttribute("content", t.meta.description);
+    }
+  }, [t, location.pathname]);
 
   return (
     <>
