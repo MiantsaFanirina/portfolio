@@ -105,6 +105,39 @@ export const projects: Project[] = [
     },
   },
   {
+    id: "mamy-portfolio",
+    slug: "mamy-portfolio",
+    title: "Mamy RAZAFINDRAKOTO - Portfolio",
+    description: {
+      en: "A commissioned portfolio for a client, featuring EN/FR localization, smooth animations and a responsive layout.",
+      fr: "Un portfolio commandé pour un client, avec localisation EN/FR, animations fluides et mise en page responsive.",
+    },
+    category: { en: "Web · Client", fr: "Web · Client" },
+    categoryKey: "web",
+    year: "2026",
+    technologies: ["React", "TypeScript", "Framer Motion", "i18next"],
+    githubUrl: "https://github.com/MiantsaFanirina/mamy-portfolio",
+    liveUrl: "https://mamy-razafindrakoto.vercel.app",
+    previewMode: "iframe",
+    tier: "selected",
+    role: {
+      en: "Design & development",
+      fr: "Conception & développement",
+    },
+    highlights: {
+      en: [
+        "EN/FR multilingual support with i18next",
+        "Smooth page transitions and scroll animations",
+        "Responsive across all screen sizes",
+      ],
+      fr: [
+        "Support multilingue EN/FR avec i18next",
+        "Transitions de page et animations au scroll fluides",
+        "Responsive sur tous les écrans",
+      ],
+    },
+  },
+  {
     id: "tilemap",
     slug: "tilemap-editor",
     title: "TileMap Editor",
