@@ -119,7 +119,8 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/MiantsaFanirina/mamy-portfolio",
     liveUrl: "https://mamy-razafindrakoto.vercel.app",
     previewMode: "iframe",
-    tier: "selected",
+    tier: "featured",
+    featured: true,
     role: {
       en: "Design & development",
       fr: "Conception & développement",
